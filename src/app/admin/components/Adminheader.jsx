@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { FaSms, FaBars, FaTimes } from "react-icons/fa";
+import { TbMessageCircle } from "react-icons/tb";
 
 export default function Adminheader({ open = true, mobileOpen = false, setMobileOpen = () => {} }) {
   const [isMobile, setIsMobile] = useState(false);
@@ -47,7 +48,7 @@ export default function Adminheader({ open = true, mobileOpen = false, setMobile
         <div className="techer-details flex items-center gap-4">
           <div className="image-content">
             <Image
-              src="/path/to/teacher/image.jpg"
+              src="/landing-image/techer.avif"
               alt="Teacher"
               width={40}
               height={40}
@@ -62,7 +63,7 @@ export default function Adminheader({ open = true, mobileOpen = false, setMobile
       </div>
 
       <div className="right-top-button-Message bg-blue p-4 rounded-full">
-        <FaSms />
+        <TbMessageCircle />
       </div>
     </div>
   );

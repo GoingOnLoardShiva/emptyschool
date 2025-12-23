@@ -23,7 +23,7 @@ export default function Design() {
       );
 
       if (res.status === 200) {
-        router.push("/admin"); // ✅ proper redirect
+        router.push("/admin/dashboard"); // ✅ proper redirect
       }
     } catch (error) {
       const message =

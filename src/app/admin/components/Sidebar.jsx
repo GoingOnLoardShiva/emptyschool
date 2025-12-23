@@ -18,17 +18,34 @@ import {
   FaBars,
   FaSignOutAlt,
   FaTimes,
+  FaSms,
 } from "react-icons/fa";
+import { IoIosSchool } from "react-icons/io";
+import { BiSolidSchool } from "react-icons/bi";
+import { RiHomeLine } from "react-icons/ri";
+import { GiPencilRuler } from "react-icons/gi";
+import { BsClipboard2Check } from "react-icons/bs";
+import { PiUsersThin ,PiClipboardText } from "react-icons/pi";
+import { SlNotebook } from "react-icons/sl";
+import { TbMoneybag } from "react-icons/tb";
+import { AiOutlineNotification } from "react-icons/ai";
+import { SlSettings } from "react-icons/sl";
+import { HiOutlinePower } from "react-icons/hi2";
+import { LiaSchoolSolid } from "react-icons/lia";
 
 const menu = [
-  { label: "Dashboard", icon: FaSchool, path: "/admin/dashboard" },
+  { label: "Dashboard", icon: RiHomeLine, path: "/admin/dashboard" },
   { label: "Students", icon: FaUserGraduate, path: "/admin/students" },
   { label: "Teachers", icon: FaChalkboardTeacher, path: "/admin/teachers" },
-  { label: "Parents", icon: FaUsers, path: "/admin/parents" },
-  { label: "Classes", icon: FaBook, path: "/admin/classes" },
-  { label: "Attendance", icon: FaClipboardList, path: "/admin/attendance" },
-  { label: "Fees", icon: FaMoneyBillWave, path: "/admin/fees" },
-  { label: "Settings", icon: FaCog, path: "/admin/settings" },
+  { label: "Parents", icon: PiUsersThin, path: "/admin/parents" },
+  { label: "Classes", icon: GiPencilRuler, path: "/admin/classes" },
+  { label: "Attendance", icon: BsClipboard2Check, path: "/admin/attendance" },
+  { label: "Fees", icon: TbMoneybag, path: "/admin/fees" },
+  { label: "Subjects", icon: SlNotebook, path: "/admin/subjects" },
+  { label: "Exams", icon: PiClipboardText , path: "/admin/exams" },
+  {label: "Staff", icon: FaUsers, path: "/admin/staff" },
+  {label:"Notices", icon: AiOutlineNotification, path:"/admin/notices"},
+  { label: "Settings", icon: SlSettings, path: "/admin/settings" },
 ];
 
 export default function AdminSidebar({ open = true, setOpen = () => {}, mobileOpen = false, setMobileOpen = () => {} }) {
@@ -65,13 +82,13 @@ export default function AdminSidebar({ open = true, setOpen = () => {}, mobileOp
       >
         <div className="flex items-center justify-between px-4 py-4 border-b">
           <div className="flex items-center gap-3 overflow-hidden">
-            <FaSchool className="text-indigo-600 text-2xl shrink-0" />
+            <LiaSchoolSolid className="text-orange-600 text-2xl shrink-0" />
 
             <span className="text-lg font-bold text-gray-800">School Admin</span>
           </div>
 
           <button onClick={() => setMobileOpen(false)} aria-label="Close menu">
-            <FaTimes className="text-gray-600" />
+            <FaTimes className="text-gray-600 cursor-pointer" />
           </button>
         </div>
 
@@ -83,7 +100,7 @@ export default function AdminSidebar({ open = true, setOpen = () => {}, mobileOp
               onClick={() => setMobileOpen(false)}
               className={clsx(
                 "flex items-center gap-4 px-4 py-3 rounded-xl transition-all overflow-hidden",
-                pathname === path ? "bg-indigo-600 text-white shadow-md" : "text-gray-700 hover:bg-indigo-50"
+                pathname === path ? "bg-orange-600 text-white shadow-md" : "text-gray-700 hover:bg-indigo-50"
               )}
               aria-current={pathname === path ? "page" : undefined}
             >
@@ -95,7 +112,7 @@ export default function AdminSidebar({ open = true, setOpen = () => {}, mobileOp
 
         <div className="px-4 py-4 border-t">
           <button onClick={handleLogout} className="flex items-center gap-4 text-red-500 hover:text-red-600 w-full">
-            <FaSignOutAlt className="text-xl" />
+            <HiOutlinePower className="text-xl" />
             <span className="text-sm font-medium">Logout</span>
           </button>
         </div>
@@ -115,7 +132,7 @@ export default function AdminSidebar({ open = true, setOpen = () => {}, mobileOp
         {/* Logo */}
         <div className="flex items-center justify-between px-4 py-4 border-b">
           <div className="flex items-center gap-3 overflow-hidden">
-            <FaSchool className="text-indigo-600 text-2xl shrink-0" />
+            <LiaSchoolSolid className="text-orange-600 text-2xl shrink-0 cursor-pointer" />
 
             <span
               className={`
@@ -130,7 +147,7 @@ export default function AdminSidebar({ open = true, setOpen = () => {}, mobileOp
           </div>
 
           <button onClick={() => setOpen(!open)} aria-label="Toggle sidebar">
-            <FaBars className="text-gray-600" />
+            <FaBars className="text-gray-600 cursor-pointer" />
           </button>
         </div>
 
@@ -142,7 +159,7 @@ export default function AdminSidebar({ open = true, setOpen = () => {}, mobileOp
               href={path}
               className={clsx(
                 "flex items-center gap-4 px-4 py-3 rounded-xl transition-all overflow-hidden",
-                pathname === path ? "bg-indigo-600 text-white shadow-md" : "text-gray-700 hover:bg-indigo-50"
+                pathname === path ? "bg-orange-600 text-white shadow-md" : "text-gray-700 hover:bg-indigo-50"
               )}
               aria-current={pathname === path ? "page" : undefined}
             >
@@ -166,7 +183,7 @@ export default function AdminSidebar({ open = true, setOpen = () => {}, mobileOp
         {/* Logout */}
         <div className="px-4 py-4 border-t">
           <button onClick={handleLogout} className="flex items-center gap-4 text-red-500 hover:text-red-600 w-full">
-            <FaSignOutAlt className="text-xl" />
+            <HiOutlinePower className="text-xl" />
             {open && <span className="text-sm font-medium">Logout</span>}
           </button>
         </div>
