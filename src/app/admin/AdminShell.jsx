@@ -24,8 +24,9 @@ export default function AdminShell({ children }) {
 
       <main
         className={clsx(
-          "transition-all duration-300 ease-in-out p-6 w-full pt-20",
-          open ? "ml-65" : "ml-20"
+          "transition-all duration-300 ease-in-out p-6 w-full pt-20 min-h-screen",
+          // apply left margin only on md+ screens so mobile gets full width
+          open ? "md:ml-65" : "md:ml-20"
         )}
         aria-hidden={mobileOpen}
       >
